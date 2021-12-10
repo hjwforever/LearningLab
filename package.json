@@ -1,0 +1,33 @@
+{
+  "name": "LearningLab",
+  "version": "0.1.0",
+  "repository": "git@github.com:hjwforever/LearningLab.git",
+  "private": true,
+  "author": {
+    "name": "hjwforever",
+    "email": "hjwbelieve@gmail.com",
+    "url": "https://aruoxi.com/"
+  },
+  "devDependencies": {
+    "git-cz": "^4.8.0",
+    "husky": "^7.0.4",
+    "lint-staged": "^12.1.2"
+  },
+  "license": "MIT",
+  "lint-staged": {
+    "src/**/*.{js,vue}": [
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "config": {
+    "commitizen": {
+      "path": "git-cz"
+    }
+  },
+  "__npminstall_done": false
+}
