@@ -1,0 +1,4 @@
+[submodule "algorithm"]
+	path = algorithm
+	url = git@github.com:hjwforever/algorithm.git
+  branch = main
