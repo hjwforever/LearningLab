@@ -1,14 +1,14 @@
 from flask_mongoengine import *
-from app.utils.core import db
+from mongoengine import Document, StringField,ReferenceField,DateTimeField
 
-class User(db.Document):
+class User(Document):
     """
     用户表
     """
     meta = {'collection': 'users'}
-    email = db.StringField(required=True)
-    username = db.StringField(required=True, max_length=128, unique=True)
-    password = db.StringField(required=True, min_length=6, max_length=16)
+    email = StringField(required=True)
+    username = StringField(required=True, max_length=128, unique=True)
+    password = StringField(required=True, min_length=6, max_length=16)
 
     def __repr__(self):
         return 'User(username="{}", email="{}")'.format(self.username, self.email)
@@ -20,16 +20,16 @@ class User(db.Document):
                     email=self.email)
         return _data
 
-class Article(db.Document):
+class Article(Document):
     """
     文章表
     """
     meta = {'collection': 'articles'}
-    title = db.StringField(required=True)
-    content = db.StringField(required=True)
-    author = db.ReferenceField(User)
-    create_time = db.DateTimeField()
-    update_time = db.DateTimeField()
+    title = StringField(required=True)
+    content = StringField(required=True)
+    author = ReferenceField(User)
+    create_time = DateTimeField()
+    update_time = DateTimeField()
 
     def __repr__(self):
         return 'Article(author="{}", title="{}", content="{}")'.format(self.author, self.title, self.content)

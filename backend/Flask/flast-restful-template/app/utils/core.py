@@ -3,13 +3,12 @@ import decimal
 import uuid
 from bson import ObjectId
 from flask.json import JSONEncoder as BaseJSONEncoder
-from flask_mongoengine import MongoEngine
+
 # from flask_apscheduler import APScheduler
 
 # scheduler = APScheduler()
 
-# 初始化数据库
-db = MongoEngine()
+
 
 class JSONEncoder(BaseJSONEncoder):
 

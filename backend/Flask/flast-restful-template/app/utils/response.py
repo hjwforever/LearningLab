@@ -1,5 +1,5 @@
 from calendar import c
-from flask import request, current_app
+from flask import jsonify, request, current_app
 
 from app.utils.code import ResponseCode
 
@@ -8,12 +8,15 @@ class ResMsg(object):
     """
     封装响应文本
     """
-    def __init__(self, data=None, code=ResponseCode.Success, rq=request):
+    def __init__(self, data=None, code=ResponseCode.Success, msg=None, rq=request):
         # 获取请求中语言选择,默认为中文
         self.lang = rq.headers.get("lang",current_app.config.get("LANG", "zh_CN"))
         self.external = {}
         self._data = data
-        self._msg = current_app.config[self.lang].get(code, None)
+        if msg is not None:
+            self._msg = msg
+        else:
+            self._msg = current_app.config[self.lang].get(code, None)
         self._code = code
 
     def update(self, data=None, code=None, msg=None):
@@ -57,4 +60,23 @@ class ResMsg(object):
                     data = _dict["_data"])
         if self.external:
             body.update(self.external)
-        return body
+        return jsonify(body)
+
+    @staticmethod
+    def success(data=None, msg=None):
+        """
+        成功响应
+        :param data:
+        :return:
+        """
+        return ResMsg(data=data, code=ResponseCode.Success, msg=msg).data
+
+    @staticmethod
+    def error(data=None, code=ResponseCode.Fail, msg=None):
+        """
+        失败响应
+        :param data:
+        :param code:
+        :return:
+        """
+        return ResMsg(data=data, code=code, msg=msg).data

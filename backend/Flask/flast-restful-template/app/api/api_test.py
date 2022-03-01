@@ -1,19 +1,16 @@
 import json
 import logging
-from unicodedata import name
-from flask import Blueprint,request,jsonify
+from flask import Blueprint,request
 
 from flask_mongoengine.wtf import model_form
 
 from app.models.model import Article, User
-from app.utils.code import ResponseCode, ResponseMessage
-from app.utils.response import ResMsg
 from app.utils.util import route
 
 bp = Blueprint("test", __name__, url_prefix="/")
 logger = logging.getLogger(__name__)
 
-@bp.route("/logs", methods=["GET"])
+@bp.route("/logss", methods=["GET"])
 def test():
     logging.info("this is info")
     logging.debug("this is debug")
@@ -23,7 +20,7 @@ def test():
 
     return "ok"
 
-@route(bp, "/users", methods=["GET", "POST"])
+@route(bp, "/userss", methods=["GET", "POST"])
 def users():
     if request.method == 'GET':
         users = User.objects.all()
@@ -37,7 +34,7 @@ def users():
         return 'success'
 
 PostForm = model_form(Article, base_class=object, only=['title', 'content'])
-@route(bp, "/articles", methods=["GET", "POST", "DELETE"])
+@route(bp, "/articless", methods=["GET", "POST", "DELETE"])
 def articles():
     if request.method == 'GET':
         articles = Article.objects.all()
