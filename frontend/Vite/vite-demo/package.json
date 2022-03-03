@@ -1,0 +1,39 @@
+{
+  "name": "vite-demo",
+  "private": true,
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "az-ui-calculator": "^0.6.8",
+    "calculator-vue": "^1.1.1",
+    "vue": "^3.2.25",
+    "vue-input-calculator": "^0.4.1"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^2.2.0",
+    "eslint": "7.32.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-define-config": "1.2.0",
+    "eslint-plugin-import": "2.25.3",
+    "eslint-plugin-prettier": "4.0.0",
+    "eslint-plugin-vue": "8.1.1",
+    "prettier": "2.2.1",
+    "sass": "^1.49.9",
+    "vite": "^2.8.0"
+  },
+  "description": "This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.",
+  "main": "vite.config.js",
+  "keywords": [
+    "vite",
+    "vue",
+    "vue3",
+    "demo",
+    "template"
+  ],
+  "author": "hjwforever",
+  "license": "MIT"
+}
