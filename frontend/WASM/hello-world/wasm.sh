@@ -1,0 +1,1 @@
+emcc -o hello_world.html hello_world.c -O3 -s WASM=1 --shell-file html_template/shell_minimal.html

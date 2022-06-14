@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="E:\Code\LearningLab\frontend\WASM\build\CMakeFiles\8c61acb879be3b60ba198445f45ec77a\PACKAGE_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{41A280C3-F66B-364B-933A-B42B6A07501B}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
