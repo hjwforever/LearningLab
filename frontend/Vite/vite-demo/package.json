@@ -8,8 +8,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "az-ui-calculator": "^0.6.8",
+    "az-ui-calculator": "^0.7.4",
     "calculator-vue": "^1.1.1",
+    "codemirror": "^6.0.0",
+    "codemirror-editor-vue3": "^2.1.7",
+    "jsonlint-mod": "^1.7.6",
     "vue": "^3.2.25",
     "vue-input-calculator": "^0.4.1"
   },

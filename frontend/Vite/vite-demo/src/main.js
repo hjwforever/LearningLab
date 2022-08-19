@@ -1,4 +1,9 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import Codemirror from 'codemirror-editor-vue3'
+// plugin-style
+import 'codemirror-editor-vue3/dist/style.css'
 
-createApp(App).mount('#app')
+const app = createApp(App)
+app.use(Codemirror)
+app.mount('#app')
